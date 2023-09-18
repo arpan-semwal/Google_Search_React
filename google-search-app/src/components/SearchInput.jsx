@@ -7,14 +7,24 @@ import MicIcon from "../assets/mic.svg";
 import ImageIcon from "../assets/image.svg";
 
 const SearchInput = () => {
+    const {query} = useParams();
 
-    const [searchQuery , setSearchQuery] = useState("");
+    const [searchQuery , setSearchQuery] = useState(query || "");
+
+    const navigate = useNavigate();
+
+
+    const searchQueryHandler = () => {
+        if(event.key === "Enter" && searchQuery.length > 0){
+            navigate(`${searchQuery}/${1}`);
+        }
+    }
 
 
 
     return <div id="searchbox" className="h-[48px] w-full md:w-[584px] flex items-center gap-3 px-4 border border-[#dfe1e5] rounded-3xl hover:bg-white hover:shadow-c hover:border-0 focus-within:shadow-c focus-within:border-0">
         <AiOutlineSearch size={18} color="#9aa0a6"/>
-        <input type="text" onChange={(e) =>setSearchQuery(e.target.value)} onKeyUp={(e) => console.log(e.target.value)} value={searchQuery} autoFocus className="grow outline-0 text-black"
+        <input type="text" onChange={(e) =>setSearchQuery(e.target.value)} onKeyUp={searchQueryHandler} value={searchQuery} autoFocus className="grow outline-0 text-black"
     />
 
     <div className="flex items-center gap-3">
