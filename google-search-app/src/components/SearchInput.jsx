@@ -27,7 +27,7 @@ const SearchInput = () => {
         <img className="h-6 w-6 cursor-pointer" src={MicIcon} alt="" />
         <img className="h-6 w-6 cursor-pointer" src={ImageIcon} alt="" />
     </div>
-    </div>;
+</div>;
 };
 
 export default SearchInput;
