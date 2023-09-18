@@ -6,13 +6,16 @@ import { AppContext } from "./utils/ContextApi";
 
 function App() {
     return(
-        <BrowserRouter>
+        <AppContext>
+            <BrowserRouter>
             <Routes>
                 <Route path="/" exact element={<Home/>}/>
                 <Route path="/:query/:startIndex" element={<SearchResult/>}/>
             </Routes>
         
         </BrowserRouter>
+        </AppContext>
+        
     );
 }
 
