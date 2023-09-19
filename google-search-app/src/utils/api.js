@@ -3,8 +3,8 @@ import axios from "axios";
 const BASE_URL = "https://www.googleapis.com/customsearch/v1"
 
 const params = {
-    key:"AIzaSyAUtKe2Qpo0K20h8hfOPOd9UW-t-2aFV1A",
-    cx:"b00738f5a5fe9411a"
+    key:"AIzaSyDVkm8FjPpdPYvY4HLljSHE3c3mtTLWpHw",
+    cx:"f17a7de0f528b4345"
 
 }
 

@@ -23,9 +23,10 @@ const SearchResult = () => {
 
     const fetchSearchResults = () => {
         let payload = {q: query , start:startIndex}
-        if(imageSearch){
-            payload.seachType = "image"
-        }
+        if (imageSearch) {
+            payload.searchType = "image";
+          }
+          
 
         fetchDataFromApi(payload).then((res) => {
             console.log(res);
