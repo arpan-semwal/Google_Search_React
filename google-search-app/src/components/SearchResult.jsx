@@ -47,15 +47,15 @@ const SearchResult = () => {
             {!imageSearch ? (
             <>
                {items.map((item, index) => (
-    <SearchedItemTemplate key={index} data={item} />
-))}
+                <SearchedItemTemplate key={index} data={item} />
+            ))}
 
             </>
             ) : (
                 <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6">
                     {items.map((item, index) => (
-    <SearchedImageItemTemplate key={index} data={item} />
-))}
+                        <SearchedImageItemTemplate key={index} data={item} />
+                ))}
 
                 </div>
             )}
