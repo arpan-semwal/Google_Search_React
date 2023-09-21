@@ -4,6 +4,7 @@ import { IoMdClose } from "react-icons/io";
 import { useNavigate, useParams } from "react-router-dom";
 import MicIcon from "../assets/mic.svg";
 import ImageIcon from "../assets/image.svg";
+import {useSpeechRecognition} from "react-speech-recognition";
 
 const SearchInput = () => {
     const {query} = useParams();
@@ -12,12 +13,30 @@ const SearchInput = () => {
 
     const navigate = useNavigate();
 
+   const{
+    transcript,
+    resetTranscript,
+    startListening,
+    stopListening,
+    listening
+   } = useSpeechRecognition();
+
 
     const searchQueryHandler = () => {
         if(event.key === "Enter" && searchQuery.length > 0){
             navigate(`${searchQuery}/${1}`);
         }
     }
+
+    const voiceSearchHandler = () => {
+        if (listening) {
+            // If currently listening, stop listening
+            stopListening();
+        } else {
+            // If not listening, start listening
+            startListening();
+        }
+    };
 
 
 
@@ -33,7 +52,12 @@ const SearchInput = () => {
             
             />
         )}
-        <img className="h-6 w-6 cursor-pointer" src={MicIcon} alt="" />
+        <img
+                    className="h-6 w-6 cursor-pointer"
+                    src={listening ? ImageIcon : MicIcon} // Toggle between MicIcon and ImageIcon based on listening state
+                    alt=""
+                    onClick={voiceSearchHandler} // Call voiceSearchHandler on click
+                />
         <img className="h-6 w-6 cursor-pointer" src={ImageIcon} alt="" />
     </div>
 </div>;
