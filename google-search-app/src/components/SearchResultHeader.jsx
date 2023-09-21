@@ -37,7 +37,7 @@ const SearchResultHeader = () => {
             </div>
 
             <div className="flex ml-[-12px] mt-3">
-                {menu.map((menu , index) => (
+                {/* {menu.map((menu , index) => (
                     <span key={index} 
                         className={`flex items-center p-3 text-[#5f6368] cursor-pointer relative ${selectedMenu === menu.name ? "text-[#1a73e8]" : ""}`} 
                         onClick={() => clickHandler(menu)}
@@ -55,7 +55,7 @@ const SearchResultHeader = () => {
                         )}
 
                     </span>
-                ))}
+                ))} */}
             </div>
         </div>
     );

@@ -55,11 +55,13 @@ const SearchResult = () => {
             ) : (
                 <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6">
                     {items.map((item, index) => (
-                        <SearchedImageItemTemplate key={index} data={item} />
+                    <SearchedImageItemTemplate key={index} data={item} />
                 ))}
 
                 </div>
             )}
+
+            <Pagination queries={queries}/>
         </main>
         <Footer/>
     </div>
